@@ -70,3 +70,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+#17-08-2022
+gem 'rails-erd', group: :development
