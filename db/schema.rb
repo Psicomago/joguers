@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_18_014434) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_18_022800) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_014434) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "match_centers", force: :cascade do |t|
+    t.bigint "sport_center_id", null: false
+    t.bigint "sport_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sport_center_id"], name: "index_match_centers_on_sport_center_id"
+    t.index ["sport_id"], name: "index_match_centers_on_sport_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.bigint "role_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_matches_on_post_id"
+    t.index ["role_id"], name: "index_matches_on_role_id"
+    t.index ["user_id"], name: "index_matches_on_user_id"
+  end
+
   create_table "post_evaluations", force: :cascade do |t|
     t.integer "experience"
     t.datetime "created_at", null: false
@@ -55,6 +75,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_014434) do
     t.string "post_zone_code", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "post_tasks", force: :cascade do |t|
+    t.bigint "match_id", null: false
+    t.bigint "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_post_tasks_on_match_id"
+    t.index ["task_id"], name: "index_post_tasks_on_task_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -123,6 +152,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_014434) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_sports", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "sport_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sport_id"], name: "index_user_sports_on_sport_id"
+    t.index ["user_id"], name: "index_user_sports_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password", null: false
@@ -136,4 +174,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_014434) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "match_centers", "sport_centers"
+  add_foreign_key "match_centers", "sports"
+  add_foreign_key "matches", "posts"
+  add_foreign_key "matches", "roles"
+  add_foreign_key "matches", "users"
+  add_foreign_key "post_tasks", "matches"
+  add_foreign_key "post_tasks", "tasks"
+  add_foreign_key "user_sports", "sports"
+  add_foreign_key "user_sports", "users"
 end
