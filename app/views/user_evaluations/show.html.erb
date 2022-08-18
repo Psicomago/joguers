@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @user_evaluation %>
+
+<div>
+  <%= link_to "Edit this user evaluation", edit_user_evaluation_path(@user_evaluation) %> |
+  <%= link_to "Back to user evaluations", user_evaluations_path %>
+
+  <%= button_to "Destroy this user evaluation", @user_evaluation, method: :delete %>
+</div>

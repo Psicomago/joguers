@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @communne %>
+
+<div>
+  <%= link_to "Edit this communne", edit_communne_path(@communne) %> |
+  <%= link_to "Back to communnes", communnes_path %>
+
+  <%= button_to "Destroy this communne", @communne, method: :delete %>
+</div>

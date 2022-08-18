@@ -1,0 +1,22 @@
+<%= form_with(model: post_evaluation) do |form| %>
+  <% if post_evaluation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post_evaluation.errors.count, "error") %> prohibited this post_evaluation from being saved:</h2>
+
+      <ul>
+        <% post_evaluation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :experience, style: "display: block" %>
+    <%= form.number_field :experience %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

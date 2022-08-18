@@ -1,0 +1,2 @@
+class Communne < ApplicationRecord
+end

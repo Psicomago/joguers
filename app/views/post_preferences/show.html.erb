@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post_preference %>
+
+<div>
+  <%= link_to "Edit this post preference", edit_post_preference_path(@post_preference) %> |
+  <%= link_to "Back to post preferences", post_preferences_path %>
+
+  <%= button_to "Destroy this post preference", @post_preference, method: :delete %>
+</div>

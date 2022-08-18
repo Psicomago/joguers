@@ -1,0 +1,2 @@
+class PostPreference < ApplicationRecord
+end

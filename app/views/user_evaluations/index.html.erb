@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>User evaluations</h1>
+
+<div id="user_evaluations">
+  <% @user_evaluations.each do |user_evaluation| %>
+    <%= render user_evaluation %>
+    <p>
+      <%= link_to "Show this user evaluation", user_evaluation %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New user evaluation", new_user_evaluation_path %>

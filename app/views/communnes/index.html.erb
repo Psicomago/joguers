@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Communnes</h1>
+
+<div id="communnes">
+  <% @communnes.each do |communne| %>
+    <%= render communne %>
+    <p>
+      <%= link_to "Show this communne", communne %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New communne", new_communne_path %>

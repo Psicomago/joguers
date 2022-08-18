@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post_evaluation %>
+
+<div>
+  <%= link_to "Edit this post evaluation", edit_post_evaluation_path(@post_evaluation) %> |
+  <%= link_to "Back to post evaluations", post_evaluations_path %>
+
+  <%= button_to "Destroy this post evaluation", @post_evaluation, method: :delete %>
+</div>

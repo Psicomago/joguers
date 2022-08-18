@@ -1,0 +1,22 @@
+<%= form_with(model: sport_center) do |form| %>
+  <% if sport_center.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sport_center.errors.count, "error") %> prohibited this sport_center from being saved:</h2>
+
+      <ul>
+        <% sport_center.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name_center, style: "display: block" %>
+    <%= form.text_field :name_center %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

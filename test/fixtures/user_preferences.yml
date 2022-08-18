@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  play_zone: MyString
+  status: 1
+  notification: 1
+  notify: 1
+  game_position: MyString
+  play_zone_code: MyString
+
+two:
+  play_zone: MyString
+  status: 1
+  notification: 1
+  notify: 1
+  game_position: MyString
+  play_zone_code: MyString

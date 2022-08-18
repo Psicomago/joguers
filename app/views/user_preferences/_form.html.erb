@@ -1,0 +1,47 @@
+<%= form_with(model: user_preference) do |form| %>
+  <% if user_preference.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user_preference.errors.count, "error") %> prohibited this user_preference from being saved:</h2>
+
+      <ul>
+        <% user_preference.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :play_zone, style: "display: block" %>
+    <%= form.text_field :play_zone %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :notification, style: "display: block" %>
+    <%= form.number_field :notification %>
+  </div>
+
+  <div>
+    <%= form.label :notify, style: "display: block" %>
+    <%= form.number_field :notify %>
+  </div>
+
+  <div>
+    <%= form.label :game_position, style: "display: block" %>
+    <%= form.text_field :game_position %>
+  </div>
+
+  <div>
+    <%= form.label :play_zone_code, style: "display: block" %>
+    <%= form.text_field :play_zone_code %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

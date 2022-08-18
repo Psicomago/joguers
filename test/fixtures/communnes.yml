@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  communne_name: MyString
+  communne_code: MyString
+
+two:
+  communne_name: MyString
+  communne_code: MyString

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_match: 2022-08-17 21:24:01
+  amount_players: 1
+  match_length: 2022-08-17 21:24:01
+  post_zone_code: MyString
+
+two:
+  date_match: 2022-08-17 21:24:01
+  amount_players: 1
+  match_length: 2022-08-17 21:24:01
+  post_zone_code: MyString
