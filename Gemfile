@@ -73,3 +73,11 @@ end
 
 #17-08-2022
 gem 'rails-erd', group: :development
+
+#18-08-2022
+gem 'geocoder'
+gem 'kaminari'
+
+#19-08'2022
+gem 'ransack'
+gem 'faker'
