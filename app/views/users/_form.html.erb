@@ -38,12 +38,12 @@
 
   <div>
     <%= form.label :gender, style: "display: block" %>
-    <%= form.number_field :gender %>
+    <%= form.select :gender,[["Maculino", "masculino"], ["Femenino", "femenino"], ["Transgenero", "transgenero"], ["No indicar", "no_indicar"]] %>
   </div>
 
   <div>
     <%= form.label :role, style: "display: block" %>
-    <%= form.number_field :role %>
+    <%= form.select :role,[["Freemium", "freemium"], ["Premium", "premium"], ["Administrador", "administrador"]] %>
   </div>
 
   <div>

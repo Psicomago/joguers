@@ -1,14 +1,25 @@
 <p style="color: green"><%= notice %></p>
-
+<nav>
+  <div class="text-center">
+    <%= search_form_for @q do |f| %>
+      <%= f.label :role, "busqueda por:" %>
+      <%= f.select(:role_eq, options_for_select({ "Freemium" => "0", "Premium" => "1", "Administrador" => "2" }),{ include_blank: true }) %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <a><%= paginate @users %></a>
+</nav>
 <h1>Users</h1>
-
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
+<div class="card-deck m-5">
+  <div class="row text-center ">
+    <div id="users">
+      <% @users.each do |user| %>
+        <%= render user %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
+<div class="text-center">
+  <strong><%= paginate @users %></strong>
+</div>
 <%= link_to "New user", new_user_path %>

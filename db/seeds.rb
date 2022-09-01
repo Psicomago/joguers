@@ -73,9 +73,9 @@ Address.create(
         email: "carlosaravena.coach@gmail.com",
         nickname: "Psicomago",
         birth: "1972/05/04",
-        role: 1,
+        role: 2,
         password: "123456",
-        gender: "Masculino",
+        gender: 0,
         phone: "+56986289794",
         address_id: @address.id
     )
@@ -101,7 +101,7 @@ user_array.each do |user|
         email: Faker::Internet.email,
         nickname: "Joguers #{i}",
         birth: rand(Date.civil(1972, 1, 1)..Date.civil(1992, 12, 31)),
-        role: 0,
+        role: rand(0..1),
         password: "123456",
         gender: "",
         phone: "+569#{i}546#{i}05#{i}",
